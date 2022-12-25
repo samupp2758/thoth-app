@@ -4,6 +4,10 @@ This Repo is designated for the React Native project of the Thoth project.
 ## UI
 ![Ui Overview](https://github.com/samupp2758/thoth-app/blob/main/overview.jpg)
 
+### Branches:
+main - Overview
+client - React Native app source
+server - Express/RealmDB server source
 ## OBT
 This app was designed with the purpose of using it at the OBT championship, where we needed to design an app that could solve one (or many) different society problems given by UN.
 
