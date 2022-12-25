@@ -15,15 +15,14 @@ This app was designed with the purpose of using it at the OBT championship, wher
 Chosen theme: Quality Education
 
 ### Members of Initial team*: 
-- Gabriel Braz Nery; 
-- Gleydson Candido Mussel; 
-- José Eduardo Ambrósio Nascimento; 
-- Leandro Fortunato Moreira; 
-- Samuel Macedo Vargas (owner of this repo); 
-- Victor Araújo Diogo; 
-- 
+- Gabriel Nery; 
+- Gleydson  Mussel; 
+- José Eduardo Nascimento; 
+- Leandro Fortunato; 
+- Samuel Vargas (owner of this repo); 
+- Victor Diogo; 
 #### Repo Development:
-- Samuel Macedo Vargas;
+- Samuel Vargas;
 
 ## App Characterics: 
 The application will be a question-and-answer forum, with the scope of elementary and high school subjects in any language.
