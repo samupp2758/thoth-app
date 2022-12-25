@@ -14,16 +14,6 @@ This app was designed with the purpose of using it at the OBT championship, wher
 ### Niche Chosen: 
 Chosen theme: Quality Education
 
-### Members of Initial team*: 
-- Gabriel Nery; 
-- Gleydson  Mussel; 
-- José Eduardo Nascimento; 
-- Leandro Fortunato; 
-- Samuel Vargas (owner of this repo); 
-- Victor Diogo; 
-#### Repo Development:
-- Samuel Vargas;
-
 ## App Characterics: 
 The application will be a question-and-answer forum, with the scope of elementary and high school subjects in any language.
 As our project is to transform education into a universal system, questions can be asked for free and any common user can ask them. However, although anyone can ask, only "special users" can answer them. To become a special user, the person must inform: a document that identifies him (CPF, RG, Biometrics, etc.); a certificate in the field you want to work in; a digital wallet.
@@ -41,4 +31,14 @@ The digital wallet works with two keys: the public key with transaction hashing 
 7. Money received by advertisers will be converted into cryptocurrencies;
 6. System automatically transfers cryptocurrencies to the Professor's digital wallet;
 7. Forum is closed and cataloged as “Question Already Answered”.
+
+### Members of the Initial Team: 
+- Gabriel Nery; 
+- Gleydson  Mussel; 
+- José Eduardo Nascimento; 
+- Leandro Fortunato; 
+- Samuel Vargas (owner of this repo); 
+- Victor Diogo; 
+#### Repo(Client/Server) Development:
+- Samuel Vargas;
 
