@@ -1,2 +1,5 @@
-# Thoth-app
- An React Native question-and-answer forum app, with the scope of elementary and high school subjects in any language.
+# Thoth Client
+This Repo is designated for the React Native project of the Thoth project.
+
+## UI
+![Ui Overview](https://github.com/samupp2758/thoth-app/overview.jpg)
