@@ -1,11 +1,12 @@
 {
   "expo": {
-    "name": "thoth-app",
+    "name": "Thoth App",
     "slug": "thoth-app",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
     ]
   },
-  "name": "thoth-app"
+  "name": "Thoth App",
+  "displayName":"Thoth App"
 }
