@@ -1,4 +1,4 @@
-# Thoth App
+# Thoth App!
 This Repo is designated for the React Native project of the Thoth project.
 
 ## UI
