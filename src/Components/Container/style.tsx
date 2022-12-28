@@ -6,6 +6,8 @@ export const ViewContainer  = styled.View`
     flexDirection: column;
     ${(props)=>props.centerX ? "alignItems: center;" : ""}
     ${(props)=>props.centerY ? "justifyContent: center;" : ""}
+
+    backgroundColor: ${(props)=>props.backgroundColor ? props.backgroundColor: "#ffffff"};
 `
 
 
@@ -15,6 +17,11 @@ export const ContainerBox  = styled.View`
     ${(props)=>
             props.centerX ? "alignItems: center;" : 
             props.rightX ? "alignItems: flex-end;" : ""}
+    
+    backgroundColor: ${(props)=>props.backgroundColor ? props.backgroundColor: "#ffffff"};
 
-    ${(props)=>props.centerY ? "justifyContent: center;" : ""}
+
+    ${(props)=>props.centerY ? "justifyContent: center;" : props.bottomY ? "justifyContent: flex-end;" : ""}
+
+    ${(props) => props.flex ? "flex: 1;" : ""}
 `

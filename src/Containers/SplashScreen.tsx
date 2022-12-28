@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Image } from '../Components/Image'
-import { Title } from '../Components/Text'
+import { Text } from '../Components/Text'
 import { View } from '../Components/Container'
 import { useTheme } from '../Hooks'
 
@@ -14,7 +14,7 @@ const SplashScreen = ({navigation}) => {
   return (
     <View centerX centerY>
       <Image source="logo" size={3}/>
-      <Title marginTop={30}>Thoth App</Title>
+      <Text marginTop={20} center>Thoth App</Text>
     </View>
   )
 }

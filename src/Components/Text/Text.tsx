@@ -22,10 +22,13 @@ export default function ({
     secoundary = false,
     disabled = false,
     
+    center = false,
     marginTop,
     marginLeft,
     marginRight,
     marginBottom,
+    color,
+    underlined = false
 }){
     if(bold){
         fontFamily = "PoppinsBold"
@@ -34,8 +37,12 @@ export default function ({
     if(large){
         fontSize = theme.FontSize.large
     }
+
+    if(Bodytext){
+        fontSize = theme.FontSize.small
+    }
     return (<>
-    <Text color={Bodytext ? theme.Colors.text : 
+    <Text color={color ? color : Bodytext ? theme.Colors.text : 
                         primary ? theme.Colors.primary :
                         secoundary ? theme.Colors.placeHolder :
                         disabled ? theme.Colors.borderNotFound : theme.Colors.text}
@@ -43,9 +50,10 @@ export default function ({
                 italic={italic}
                 fontFamily={fontFamily}
                 fontSize={fontSize} 
-
+                underlined={underlined}
                 marginTop={marginTop}
                 marginLeft={marginLeft}
                 marginRight={marginRight}
-                marginBottom={marginBottom}> {children}</Text></>)
+                marginBottom={marginBottom}
+                center={center}> {children}</Text></>)
 }
