@@ -12,7 +12,12 @@ const Container = ({
     row = false,
     flex = false,
     backgroundColor = useTheme().Colors.textLight,
-    width
+    width,
+
+    marginTop,
+    marginLeft,
+    marginRight,
+    marginBottom,
     
 }) => {
 
@@ -26,7 +31,12 @@ const Container = ({
             bottomY={bottomY}
             backgroundColor={backgroundColor}
             width={width}
-            >
+
+            
+            marginTop={marginTop}
+            marginLeft={marginLeft}
+            marginRight={marginRight}
+            marginBottom={marginBottom}>
                 {children}
             </ContainerBox>)
 }

@@ -9,6 +9,7 @@ import {
   SignIn, 
   SplashScreen} from "../Containers";
 import TermsOfUse from '../Containers/TermsOfUse'
+import Login from '../Containers/Login'
 
 
 const Stack = createStackNavigator()
@@ -33,6 +34,7 @@ const MainNavigator = () => {
         <Stack.Navigator screenOptions={{ gestureEnabled:false,headerShown: false }}>
           <Stack.Screen name="SplashScreen" component={SplashScreen} />
           <Stack.Screen name="SignIn" component={SignIn} />
+          <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="TermsOfUse" component={TermsOfUse} />
         </Stack.Navigator>
       </NavigationContainer>

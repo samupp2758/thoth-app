@@ -9,7 +9,7 @@ export const Colors = {
     textLight:'#FAFAFA',
     inputBackground:'#F0F0F0',
     inputBorder:'#7638E8',
-    placeHolder:'#C4C4C4',
+    placeHolder:'#B0B0B0',
     borderNotFound:'#8A8A8A',
     primaryHighLighted:'#E6D9FF',
     primary: '#5406E2',
@@ -47,6 +47,7 @@ export const Colors = {
           require('../Assets/Images/Logo/2x.png'),
           require('../Assets/Images/Logo/3x.png'),
           require('../Assets/Images/Logo/4x.png')],
+    logoLoginScreen:[require('../Assets/Images/LogoLoginScreen.png')],
     siginIsometric: [require('../Assets/Images/signin-isometric.png')]
   }
 

@@ -14,7 +14,13 @@ export const Button = ({
     inline = false,
     onPress = () => {},
     fontSize = useTheme().FontSize.regular,
-    fontFamily = useTheme().FontFamily.primary
+    fontFamily = useTheme().FontFamily.primary,
+    underlined=false,
+
+    marginTop,
+    marginLeft,
+    marginRight,
+    marginBottom,
 }) =>{
         if(google){
             color = '#ffffff'
@@ -27,6 +33,8 @@ export const Button = ({
 
         if(inline){
             color = useTheme().Colors.primary
+        }else{
+            underlined = false
         }
             return(
             
@@ -35,9 +43,14 @@ export const Button = ({
                     <View style={{margin:-1.5,padding:0}}>
                         <Text 
                         color={color} 
-                        underlined
+                        underlined={underlined}
                         fontSize={fontSize}
-                        fontFamily={fontFamily}>
+                        fontFamily={fontFamily}
+                        
+                        marginTop={marginTop}
+                        marginLeft={marginLeft}
+                        marginRight={marginRight}
+                        marginBottom={marginBottom}>
                             {children}
                         </Text> 
                     </View>

@@ -7,7 +7,6 @@ import { useTheme } from '../Hooks'
 
 const SignIn = ({navigation}) => {
   useEffect(() => {
-    console.log('Signin')
   })
 
   return (
@@ -16,7 +15,7 @@ const SignIn = ({navigation}) => {
       <Container>
         <Text  large bold
                 marginTop={useTheme().Margin.top-21}
-                marginLeft={useTheme().Margin.left}>Sign In</Text>
+                marginLeft={useTheme().Margin.left}>Log In</Text>
       </Container>
 
       <Container rightX>
@@ -24,12 +23,12 @@ const SignIn = ({navigation}) => {
       </Container>
 
       <Container flex bottomY centerX>
-        <Button>Sign In by the app</Button>
-        <Button google>Sign In with Google</Button>
-        <Button facebook>Sign In with Facebook</Button>
+        <Button onPress={()=>navigation.navigate('Login')}>Login by the app</Button>
+        <Button google>Login with Google</Button>
+        <Button facebook>Login with Facebook</Button>
         <Text marginTop={useTheme().Margin.top-15} center Bodytext fontSize={useTheme().FontSize.small}>
           By entering our application, you agree to {"\n"}
-          the <Button inline fontSize={useTheme().FontSize.small} onPress={()=>{navigation.navigate('TermsOfUse')}}>terms of use.</Button>
+          the <Button inline underlined fontSize={useTheme().FontSize.small} onPress={()=>{navigation.navigate('TermsOfUse')}}>terms of use.</Button>
         </Text>
       </Container>
 
