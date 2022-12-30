@@ -42,9 +42,9 @@ textDecorationLine: underline;
 `
 
 
-const icon = (props) => {
+export const icon = (props) => {
     return(`
-    color: ${(props) => props.color};
+    color: ${props.color};
     fontSize: 30px;
 
     position: absolute;
@@ -53,18 +53,4 @@ const icon = (props) => {
     left:10px;`)
 }
 
-export const AntDesign_ = styled(AntDesign)`
-${(props)=>icon(props)}
-`;
 
-export const Ionicons_ = styled(Ionicons)`
-${(props)=>icon(props)}
-`;
-
-export const FontAwesome_ = styled(FontAwesome)`
-    ${(props)=>icon(props)}
-`;
-
-export const Entypo_ = styled(Entypo)`
-${(props)=>icon(props)}
-`;

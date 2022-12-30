@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { Text } from '../Components/Text'
 import { Container, View } from '../Components/Container'
 import { Image } from '../Components/Image'
-import { Button } from '../Components/Button'
+import { Button, ButtonedIcon} from '../Components/Button'
 import { useTheme } from '../Hooks'
 import { Input } from '../Components/Input'
+import Icon from '../Components/Icon'
 
 const Login = ({navigation}) => {
     const [username,setUsername] = useState("")
@@ -19,10 +20,10 @@ const Login = ({navigation}) => {
     return (
     <View centerX>
 
-        <Container>
+        <Container centerX row marginLeft={useTheme().Margin.left-10}>
+            <ButtonedIcon onPress={()=>navigation.goBack()} backgroundColor='#000' family='AntDesign' name='left' color={useTheme().Colors.primary}/>
             <Text  large bold
-                    marginTop={useTheme().Margin.top-21}
-                    marginLeft={useTheme().Margin.left}>Log In</Text>
+                    marginLeft={useTheme().Margin.left-20}>Log In</Text>
         </Container>
 
         <Container marginTop={useTheme().Margin.top-15} rightX>

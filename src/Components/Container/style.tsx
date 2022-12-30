@@ -13,7 +13,7 @@ export const ViewContainer  = styled.View`
 
 export const ContainerBox  = styled.View`
     ${(props)=>props.row ? 'flexDirection: row;' : "flexDirection: column;"}
-    ${(props)=>props.row ? 'height:100%;' : "width:"+Dimensions.get('window').width+"px;"}
+    ${(props)=>props.row ? '' : "width:"+Dimensions.get('window').width+"px;"}
     ${(props)=>
             props.centerX ? "alignItems: center;" : 
             props.rightX ? "alignItems: flex-end;" : ""}

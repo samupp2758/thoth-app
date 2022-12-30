@@ -1,8 +1,10 @@
 import React from "react";
 import { View } from "react-native";
 import { useTheme } from "../../Hooks";
+import Icon from "../Icon";
 import { Text } from "../Text";
-import { Container, AntDesign_,Entypo_,Pressable,PressableInline } from "./style";
+import ButtonedIcon from "./ButtonedIcon";
+import { Container,icon,Pressable,PressableInline } from "./style";
 
 
 export const Button = ({
@@ -21,6 +23,10 @@ export const Button = ({
     marginLeft,
     marginRight,
     marginBottom,
+
+    // ButtonedIcon
+    name,
+    buttonedicon=false,
 }) =>{
         if(google){
             color = '#ffffff'
@@ -37,7 +43,6 @@ export const Button = ({
             underlined = false
         }
             return(
-            
                 inline ? 
                 <PressableInline onPress={()=>onPress()}>
                     <View style={{margin:-1.5,padding:0}}>
@@ -59,8 +64,8 @@ export const Button = ({
                     <Container 
                         google={google}
                         backgroundColor={backgroundColor}>
-                                {google ?  <AntDesign_ name='google' color={color}/> : <></>}
-                                {facebook ?  <Entypo_ name='facebook' color={color}/> : <></>}
+                                {google ?  <Icon style={icon} family='AntDesign' name='google' color={color}/> : <></>}
+                                {facebook ?  <Icon style={icon} family='Entypo' name='facebook' color={color}/> : <></>}
                                 <Text 
                                 color={color}
                                 fontSize={fontSize}
