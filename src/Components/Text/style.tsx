@@ -10,7 +10,9 @@ ${(props)=>props.marginTop ? 'marginTop:'+props.marginTop+'px;' : ''}
 ${(props)=>props.marginLeft ? 'marginLeft:'+props.marginLeft+'px;' : ''}
 ${(props)=>props.marginRight ? 'marginRight:'+props.marginRight+'px;' : ''}
 ${(props)=>props.marginBottom ? 'marginBottom:'+props.marginBottom+'px;' : ''}
-${(props)=>props.center ? "textAlign: center;" :""}
+${(props)=>
+    props.center ? "textAlign: center;" :
+    props.justify? "textAlign:justify;" : ""}
 ${(props)=>props.underlined ?'textDecorationLine: underline;' : ''}
 `;
 

@@ -8,6 +8,7 @@ import { useFonts } from 'expo-font'
 import {
   SignIn, 
   SplashScreen} from "../Containers";
+import TermsOfUse from '../Containers/TermsOfUse'
 
 
 const Stack = createStackNavigator()
@@ -32,6 +33,7 @@ const MainNavigator = () => {
         <Stack.Navigator screenOptions={{ gestureEnabled:false,headerShown: false }}>
           <Stack.Screen name="SplashScreen" component={SplashScreen} />
           <Stack.Screen name="SignIn" component={SignIn} />
+          <Stack.Screen name="TermsOfUse" component={TermsOfUse} />
         </Stack.Navigator>
       </NavigationContainer>
   )

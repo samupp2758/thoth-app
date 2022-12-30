@@ -20,8 +20,17 @@ export const ContainerBox  = styled.View`
     
     backgroundColor: ${(props)=>props.backgroundColor ? props.backgroundColor: "#ffffff"};
 
+    ${(props)=>props.width ? "width: "+props.width+";" : ""}
 
     ${(props)=>props.centerY ? "justifyContent: center;" : props.bottomY ? "justifyContent: flex-end;" : ""}
 
     ${(props) => props.flex ? "flex: 1;" : ""}
+`
+
+export const ScrollView = styled.ScrollView`
+flex: 1;
+flexDirection: column;
+${(props)=>props.centerX ? "alignItems: center;" : ""}
+${(props)=>props.centerY ? "justifyContent: center;" : ""}
+
 `

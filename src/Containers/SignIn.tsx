@@ -5,8 +5,9 @@ import { Image } from '../Components/Image'
 import { Button } from '../Components/Button'
 import { useTheme } from '../Hooks'
 
-const SignIn = () => {
+const SignIn = ({navigation}) => {
   useEffect(() => {
+    console.log('Signin')
   })
 
   return (
@@ -28,7 +29,7 @@ const SignIn = () => {
         <Button facebook>Sign In with Facebook</Button>
         <Text marginTop={useTheme().Margin.top-15} center Bodytext fontSize={useTheme().FontSize.small}>
           By entering our application, you agree to {"\n"}
-          the <Button inline fontSize={useTheme().FontSize.small}>terms of use.</Button>
+          the <Button inline fontSize={useTheme().FontSize.small} onPress={()=>{navigation.navigate('TermsOfUse')}}>terms of use.</Button>
         </Text>
       </Container>
 

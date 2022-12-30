@@ -11,7 +11,8 @@ const Container = ({
     bottomY = false,
     row = false,
     flex = false,
-    backgroundColor = useTheme().Colors.textLight
+    backgroundColor = useTheme().Colors.textLight,
+    width
     
 }) => {
 
@@ -24,6 +25,7 @@ const Container = ({
             flex = {flex}
             bottomY={bottomY}
             backgroundColor={backgroundColor}
+            width={width}
             >
                 {children}
             </ContainerBox>)

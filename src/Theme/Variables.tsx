@@ -23,7 +23,8 @@ export const Colors = {
    */
   export const FontSize = {
     small: 12,
-    regular: 15,
+    termsOfUse: 14,
+    regular: 16,
     regularHalf:20,
     large: 30,
   }

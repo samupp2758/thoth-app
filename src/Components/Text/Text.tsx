@@ -28,7 +28,8 @@ export default function ({
     marginRight,
     marginBottom,
     color,
-    underlined = false
+    underlined = false,
+    justify = false
 }){
     if(bold){
         fontFamily = "PoppinsBold"
@@ -39,8 +40,9 @@ export default function ({
     }
 
     if(Bodytext){
-        fontSize = theme.FontSize.small
+        justify = true
     }
+
     return (<>
     <Text color={color ? color : Bodytext ? theme.Colors.text : 
                         primary ? theme.Colors.primary :
@@ -55,5 +57,6 @@ export default function ({
                 marginLeft={marginLeft}
                 marginRight={marginRight}
                 marginBottom={marginBottom}
-                center={center}> {children}</Text></>)
+                center={center}
+                justify={justify}> {children}</Text></>)
 }

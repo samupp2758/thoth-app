@@ -1,18 +1,21 @@
 import React from "react";
 import { SafeAreaView } from "react-native";
 import { useTheme } from "../../Hooks";
-import { ViewContainer } from "./style"
+import { ViewContainer,ScrollView } from "./style"
 
 const View = ({
     children,
     centerX = false,
     centerY = false,
-    backgroundColor = useTheme().Colors.textLight
+    backgroundColor = useTheme().Colors.textLight,
+    scroll = false
     
 }) => {
 
 
-    return (<ViewContainer 
+    return (
+            !scroll?
+            <ViewContainer 
             centerX={centerX}
             centerY={centerY}
             backgroundColor={backgroundColor}
@@ -20,7 +23,26 @@ const View = ({
                 <SafeAreaView>
                     {children}
                 </SafeAreaView>
-            </ViewContainer>)
+            </ViewContainer>
+            
+            :
+
+
+                        <ViewContainer 
+                        centerX={centerX}
+                        centerY={centerY}
+                        backgroundColor={backgroundColor}
+                        >
+                            <SafeAreaView>
+                                <ScrollView>
+                                    {children}
+                                </ScrollView>
+                            </SafeAreaView>
+                        </ViewContainer>
+            
+            
+            
+            )
 }
 
 export default View

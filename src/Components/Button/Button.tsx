@@ -1,4 +1,5 @@
 import React from "react";
+import { View } from "react-native";
 import { useTheme } from "../../Hooks";
 import { Text } from "../Text";
 import { Container, AntDesign_,Entypo_,Pressable,PressableInline } from "./style";
@@ -30,16 +31,18 @@ export const Button = ({
             return(
             
                 inline ? 
-                <PressableInline onPress={onPress}>
-                <Text 
-                color={color} 
-                underlined
-                fontSize={fontSize}
-                fontFamily={fontFamily}>
-                    {children}
-                </Text> 
+                <PressableInline onPress={()=>onPress()}>
+                    <View style={{margin:-1.5,padding:0}}>
+                        <Text 
+                        color={color} 
+                        underlined
+                        fontSize={fontSize}
+                        fontFamily={fontFamily}>
+                            {children}
+                        </Text> 
+                    </View>
                 </PressableInline>:
-                <Pressable onPress={onPress}>
+                <Pressable onPress={()=>onPress()}>
                     <Container 
                         google={google}
                         backgroundColor={backgroundColor}>
