@@ -7,6 +7,8 @@ import { useTheme } from '../Hooks'
 import { Input } from '../Components/Input'
 import Icon from '../Components/Icon'
 
+import {login} from '../Storage/API'
+
 const Login = ({navigation}) => {
     const [username,setUsername] = useState("")
     const [password,setPassword] = useState("")
@@ -16,6 +18,12 @@ const Login = ({navigation}) => {
     useEffect(() => {
     },[username])
 
+
+    const finishLogin = () => {
+        login(username,password,(response)=>{
+            console.log(response)
+        })
+    }
 
     return (
     <View centerX>
@@ -55,7 +63,7 @@ const Login = ({navigation}) => {
         </Container>
 
     <Container flex centerX marginTop={useTheme().Margin.top}>
-    <Button>Login</Button>
+    <Button onPress={()=>finishLogin()}>Login</Button>
     <Button inline marginTop={useTheme().Margin.top-21} fontSize={useTheme().FontSize.regular}>Signin</Button>
     </Container>
 

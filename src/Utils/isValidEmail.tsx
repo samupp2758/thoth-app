@@ -1,4 +1,11 @@
 
 export const isaValidEmail = (email) =>{
-    return true;
+        const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        var response = true
+
+        if (!email.match(validRegex)) {            
+            response = false
+        }
+        return response
+      
 }
