@@ -34,7 +34,7 @@ export const login = (username,password,CALLBACK) => {
                 CALLBACK(response)
             }).catch(function (response_API) {
                 response.message = response_API
-                response.code = -1
+                response.code = "ErrorX"+"-1"
                 response.go = false
                 CALLBACK(response)
             })
