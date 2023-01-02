@@ -13,7 +13,7 @@ import { useTheme } from '../../Hooks';
 
 export const Container = styled.View`
     backgroundColor: ${(props) => props.backgroundColor};
-    flexDirection: column;
+    flexDirection: row;
 
     ${(props)=>props.centerX ? "alignItems: center;" : ""}
     ${(props)=>props.centerY ? "justifyContent: center;" : ""}
@@ -75,5 +75,6 @@ ${(props)=>
     props.center ? "textAlign: center;" :
     props.justify? "textAlign:justify;" : ""}
 ${(props)=>props.underlined ?'textDecorationLine: underline;' : ''}
+width:84%;
 
 `

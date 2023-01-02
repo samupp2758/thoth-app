@@ -1,25 +1,42 @@
-import React from "react";
+import React, { Component } from "react";
 import { SafeAreaView } from "react-native";
 import { useTheme } from "../../Hooks";
 import { ContainerBox } from "./style"
 
-const Container = ({
+type Props = {
+    children?: React.ReactNode,
+    centerX?: boolean,
+    centerY?: boolean,
+    rightX?: boolean,
+    bottomY?: boolean,
+    row?: boolean,
+    flex?: boolean,
+    backgroundColor?: string,
+    width?: string,
+
+    marginTop?: number,
+    marginLeft?: number,
+    marginRight?: number,
+    marginBottom?: number
+}
+
+
+
+const Container: React.FC<Props> = ({
     children,
-    centerX = false,
-    centerY = false,
-    rightX = false,
+    centerX= false,
+    centerY= false,
+    rightX= false,
     bottomY = false,
-    row = false,
-    flex = false,
-    backgroundColor = useTheme().Colors.textLight,
+    row= false,
+    flex= false,
+    backgroundColor= useTheme().Colors.textLight,
     width,
 
-    marginTop,
-    marginLeft,
-    marginRight,
-    marginBottom,
-    
-}) => {
+    marginTop= 0,
+    marginLeft= 0,
+    marginRight= 0,
+    marginBottom= 0}) => {
 
 
     return (<ContainerBox 
