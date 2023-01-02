@@ -1,9 +1,18 @@
-import React from "react";
+import React, { ReactPropTypes } from "react";
 import { SafeAreaView } from "react-native";
 import { useTheme } from "../../Hooks";
 import { ViewContainer,ScrollView } from "./style"
 
-const View = ({
+type Props = {
+    children?:React.ReactNode,
+    centerX?: boolean,
+    centerY?: boolean,
+    backgroundColor?:string,
+    scroll?:boolean
+}
+
+
+const View: React.FC<Props> = ({
     children,
     centerX = false,
     centerY = false,

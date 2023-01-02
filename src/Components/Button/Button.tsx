@@ -6,8 +6,30 @@ import { Text } from "../Text";
 import ButtonedIcon from "./ButtonedIcon";
 import { Container,icon,Pressable,PressableInline } from "./style";
 
+type Props = {
+    children?: string,
+    google?: boolean,
+    facebook?: boolean,
+    color?: string,
+    backgroundColor?: string,
+    inline?: boolean,
+    onPress?: ()=>void,
+    fontSize?: number,
+    fontFamily?: string,
+    underlined?: boolean,
+    disabled?: boolean,
 
-export const Button = ({
+    marginTop?: number,
+    marginLeft?: number,
+    marginRight?: number,
+    marginBottom?: number,
+
+    // ButtonedIcon
+    name?: string,
+    buttonedicon?: boolean
+}
+
+export const Button: React.FC<Props> = ({
     children,
     google = false,
     facebook = false,
@@ -18,14 +40,15 @@ export const Button = ({
     fontSize = useTheme().FontSize.regular,
     fontFamily = useTheme().FontFamily.primary,
     underlined=false,
+    disabled = false,
 
-    marginTop,
-    marginLeft,
-    marginRight,
-    marginBottom,
+    marginTop = 0,
+    marginLeft = 0,
+    marginRight = 0,
+    marginBottom = 0,
 
     // ButtonedIcon
-    name,
+    name = "",
     buttonedicon=false,
 }) =>{
         if(google){
@@ -35,6 +58,11 @@ export const Button = ({
         if(facebook){
             color = '#ffffff'
             backgroundColor = '#3B5998'
+        }
+
+        if(disabled){
+            color = useTheme().Colors.primary
+            backgroundColor = useTheme().Colors.primaryHighLighted
         }
 
         if(inline){

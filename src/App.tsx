@@ -1,5 +1,5 @@
 import React from 'react';
-import 'react-native-gesture-handler'
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react'
@@ -8,9 +8,9 @@ import MainNavigator from './Navigators'
 
 
 const App = () => (
-    <PaperProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
         <MainNavigator/>
-    </PaperProvider>
+    </GestureHandlerRootView>
 )
 
 export default App

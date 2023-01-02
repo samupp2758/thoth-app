@@ -5,7 +5,7 @@ import { Image } from '../Components/Image'
 import { Button } from '../Components/Button'
 import { useTheme } from '../Hooks'
 
-const SignIn = ({navigation}) => {
+const Startup = ({navigation}) => {
   useEffect(() => {
   })
 
@@ -36,4 +36,4 @@ const SignIn = ({navigation}) => {
   )
 }
 
-export default SignIn
+export default Startup

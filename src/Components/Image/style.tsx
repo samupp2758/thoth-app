@@ -4,6 +4,6 @@ import styled from 'styled-components';
 
 export const ImageView = styled.Image`
 resizeMode:contain;
-${(props)=>props.height ? "height: "+props.height+";" : ""}
-${(props)=>props.maxWidth ? "maxWidth: "+props.maxWidth+";" : ""}
+${(props)=>props.height != '0' ? "height: "+props.height+";" : ""}
+${(props)=>props.maxWidth != '0'  ? "maxWidth: "+props.maxWidth+";" : ""}
 `;

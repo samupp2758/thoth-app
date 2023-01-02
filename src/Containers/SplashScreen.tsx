@@ -7,7 +7,7 @@ import { useTheme } from '../Hooks'
 const SplashScreen = ({navigation}) => {
   useEffect(() => {
     setTimeout(()=>{
-      navigation.navigate('SignIn')
+      navigation.navigate('Startup')
     },1000)
   })
 

@@ -6,7 +6,16 @@ import { Text } from "../Text";
 import { Container, Pressable,PressableInline } from "./style";
 
 
-export const ButtonedIcon = ({
+type Props = {
+    backgroundColor?: string,
+    onPress?: () => void,
+    size?: number,
+    color?: string,
+    family?: string,
+    name?: string
+}
+
+export const ButtonedIcon: React.FC<Props> = ({
     backgroundColor = useTheme().Colors.primary,
     onPress = () => {},
     size = 30,

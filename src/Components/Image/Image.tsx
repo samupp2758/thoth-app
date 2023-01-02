@@ -2,10 +2,16 @@ import React from "react";
 import { useTheme } from "../../Hooks";
 import { ImageView } from "./style";
 
+type Props = {
+    size?: number,
+    source?: string,    
+    maxWidth?: string,
+    height?: string
+}
 
-export const Image = ({
+export const Image: React.FC<Props> = ({
     size = 1,
-    source,    
+    source = "",    
     maxWidth,
     height
 }) =>{

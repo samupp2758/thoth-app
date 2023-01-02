@@ -1,4 +1,4 @@
 export const styleDefault = ({color,size}) => `
     color: ${color};
-    fontSize: ${size};
+    fontSize: ${size}px;
     `

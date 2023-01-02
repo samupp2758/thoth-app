@@ -6,10 +6,13 @@ import { useTheme } from '../Hooks'
 import { useFonts } from 'expo-font'
 
 import {
-  SignIn, 
-  SplashScreen} from "../Containers";
-import TermsOfUse from '../Containers/TermsOfUse'
-import Login from '../Containers/Login'
+  Startup, 
+  SplashScreen,
+  TermsOfUse,
+  Login,
+  
+  //Storyboards
+  Signin} from "../Containers";
 
 
 const Stack = createStackNavigator()
@@ -33,9 +36,11 @@ const MainNavigator = () => {
         <StatusBar/>
         <Stack.Navigator screenOptions={{ gestureEnabled:false,headerShown: false }}>
           <Stack.Screen name="SplashScreen" component={SplashScreen} />
-          <Stack.Screen name="SignIn" component={SignIn} />
+          <Stack.Screen name="Startup" component={Startup} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="TermsOfUse" component={TermsOfUse} />
+
+          <Stack.Screen name="Signin" component={Signin}/>
         </Stack.Navigator>
       </NavigationContainer>
   )

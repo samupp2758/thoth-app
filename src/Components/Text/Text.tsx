@@ -2,12 +2,37 @@
 import React from 'react';
 import { useTheme } from '../../Hooks';
 import {
-    Text
+    Text_
 } from './style';
 
 const theme = useTheme()
 
-export default function ({
+type Props = {
+    children?: string | React.ReactNode,
+    width?: string,
+    fontSize?: number,
+    fontFamily?: string,
+    bold?: boolean,
+    large?: boolean,
+    italic?: boolean,
+
+    //colors
+    Bodytext?: boolean,
+    primary?: boolean,
+    secoundary?: boolean,
+    disabled?: boolean,
+    
+    center?: boolean,
+    marginTop?: number,
+    marginLeft?: number,
+    marginRight?: number,
+    marginBottom?: number,
+    color?: string,
+    underlined?: boolean,
+    justify?: boolean
+}
+
+export const Text: React.FC<Props> = ({
     children,
     width = '100%',
     fontSize = theme.FontSize.regularHalf,
@@ -23,14 +48,14 @@ export default function ({
     disabled = false,
     
     center = false,
-    marginTop,
-    marginLeft,
-    marginRight,
-    marginBottom,
-    color,
+    marginTop = 0,
+    marginLeft = 0,
+    marginRight = 0,
+    marginBottom = 0,
+    color = undefined,
     underlined = false,
     justify = false
-}){
+}) => {
     if(bold){
         fontFamily = "PoppinsBold"
     }
@@ -44,7 +69,7 @@ export default function ({
     }
 
     return (<>
-    <Text color={color ? color : Bodytext ? theme.Colors.text : 
+    <Text_ color={color ? color : Bodytext ? theme.Colors.text : 
                         primary ? theme.Colors.primary :
                         secoundary ? theme.Colors.placeHolder :
                         disabled ? theme.Colors.borderNotFound : theme.Colors.text}
@@ -58,5 +83,5 @@ export default function ({
                 marginRight={marginRight}
                 marginBottom={marginBottom}
                 center={center}
-                justify={justify}> {children}</Text></>)
+                justify={justify}>{children}</Text_></>)
 }

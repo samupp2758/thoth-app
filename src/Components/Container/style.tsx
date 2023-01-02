@@ -3,7 +3,7 @@ import { Dimensions } from 'react-native'
 
 export const ViewContainer  = styled.View`
     flex: 1;
-    flexDirection: column;
+    flexDirection: row;
     ${(props)=>props.centerX ? "alignItems: center;" : ""}
     ${(props)=>props.centerY ? "justifyContent: center;" : ""}
 

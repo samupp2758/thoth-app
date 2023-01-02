@@ -29,7 +29,12 @@ const Login = ({navigation}) => {
     <View centerX>
 
         <Container centerX row marginLeft={useTheme().Margin.left-10}>
-            <ButtonedIcon onPress={()=>navigation.goBack()} backgroundColor='#000' family='AntDesign' name='left' color={useTheme().Colors.primary}/>
+            <ButtonedIcon
+            onPress={()=>navigation.goBack()}
+            backgroundColor='#000'
+            family='AntDesign'
+            name='left'
+            color={useTheme().Colors.primary}/>
             <Text  large bold
                     marginLeft={useTheme().Margin.left-20}>Log In</Text>
         </Container>
@@ -40,22 +45,22 @@ const Login = ({navigation}) => {
 
         <Container marginTop={useTheme().Margin.top-15}>
             <Container centerX>
-                <Container width={'90%'} marginBottom={useTheme().Margin.bottom}>
+                <Container width='90%' marginBottom={useTheme().Margin.bottom}>
                     <Text bold marginBottom={useTheme().Margin.bottom-25}>Username</Text>
                     <Input
                         type="username"
                         value={username}
-                        onChangeText={setUsername}
+                        onChangeText={(value)=>setUsername(value)}
                         placeholder="yourname@example.com"
                     />
                 </Container>
 
-                <Container width={'90%'}>
+                <Container width='90%'>
                     <Text bold marginBottom={useTheme().Margin.bottom-25}>Password</Text>
                     <Input
                         type="password"
                         value={password}
-                        onChangeText={setPassword}
+                        onChangeText={(value)=>setPassword(value)}
                         placeholder="your1st*#!passw@rd"
                     />
                 </Container>
@@ -64,7 +69,11 @@ const Login = ({navigation}) => {
 
     <Container flex centerX marginTop={useTheme().Margin.top}>
     <Button onPress={()=>finishLogin()}>Login</Button>
-    <Button inline marginTop={useTheme().Margin.top-21} fontSize={useTheme().FontSize.regular}>Signin</Button>
+    <Button 
+        inline
+        marginTop={useTheme().Margin.top-21}
+        fontSize={useTheme().FontSize.regular}
+        onPress={()=>navigation.navigate('Signin',{cameFrom:'Signin'})}>Signin</Button>
     </Container>
 
     </View>

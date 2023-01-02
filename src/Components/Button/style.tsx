@@ -32,7 +32,7 @@ export const Container = styled.View`
 
 
 export const Pressable = styled.TouchableOpacity`
-width:85%;
+width:90%;
 margin: 5px;
 `
 

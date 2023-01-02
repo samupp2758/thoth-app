@@ -31,12 +31,20 @@ import styled from 'styled-components'
 import React from "react"
 import { styleDefault } from "./style"
 
+type Props = {
+  family?: string,
+  name?: string,
+  color?: string,
+  size?: number,
+  style?: () => string
+}
+
 export default ({
-    family,
-    name,
-    color,
-    size = 30,
-    style = styleDefault
+  family = 'AntDesign',
+  name = 'info',
+  color = '#000000',
+  size = 30,
+  style = styleDefault
 })=>{
     const Component = styled(families[family])`
     ${style({color,size})}
