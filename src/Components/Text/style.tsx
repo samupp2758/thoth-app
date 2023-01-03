@@ -16,4 +16,4 @@ ${(props)=>
 ${(props)=>props.underlined ?'textDecorationLine: underline;' : ''}
 `;
 
-export default {Text}
+export default {Text_}

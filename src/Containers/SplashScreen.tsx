@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Image } from '../Components/Image'
 import { Text } from '../Components/Text'
-import { View } from '../Components/Container'
+import { Container, View } from '../Components/Container'
 import { useTheme } from '../Hooks'
 
 const SplashScreen = ({navigation}) => {
@@ -13,7 +13,9 @@ const SplashScreen = ({navigation}) => {
 
   return (
     <View centerX centerY>
-      <Image source="logo" size={3}/>
+      <Container centerX>
+        <Image source="logo" size={2}/>
+      </Container>
       <Text marginTop={20} center>Thoth App</Text>
     </View>
   )

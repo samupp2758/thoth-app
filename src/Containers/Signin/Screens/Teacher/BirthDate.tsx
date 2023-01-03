@@ -5,59 +5,59 @@ import Header from '../../Components/Header'
 
 import { Button } from '../../../../Components/Button'
 import { Input } from '../../../../Components/Input'
-
+import { Image } from '../../../../Components/Image'
 
 import {useTheme} from '../../../../Hooks'
 import { Errors } from '../../../../Utils/Codes'
-import { Image } from '../../../../Components/Image'
-import { isaValidName } from '../../../../Utils/isaValidName'
+import { isaValidDate } from '../../../../Utils/isaValidDate'
 
 
-const FullName = ({route,navigation}) => {
-    const [name,setName] = useState('')
+const NationalID = ({route,navigation}) => {
+    const [date,setDate] = useState('')
     const [disabled,setDisabled] = useState(true)
 
     const defaultBorder = useTheme().Colors.placeHolder
-    const [name_border,setName_border] = useState(defaultBorder)
+    const [date_border,setDate_border] = useState(defaultBorder)
 
 
     useEffect(()=>{
-        if(isaValidName(name)){
+        if(isaValidDate(date.replace(/\D/g,""))){
             //Save 
             setDisabled(false)
-            setName_border(defaultBorder)
+            setDate_border(defaultBorder)
         }else{
-            setName_border(useTheme().Colors.error)
+            setDate_border(useTheme().Colors.error)
             setDisabled(true)
         }
-    },[name])
+    },[date])
 
     const next = () => {
-        if(isaValidName(name)){
+        if(isaValidCPF(date.replace(/\D/g,""))){
             //Save 
-            navigation.navigate('NationalID')
+            //navigation.navigate('')
         }else{
-            console.log(Errors[2])
+            console.log(Errors[3])
         }
     }
 
     return (
         <View centerX centerY>
-            <Header navigation={navigation} props={{step:6}} />
+            <Header navigation={navigation} props={{step:3}} />
             <View centerX centerY>
                 <Container centerX>
 
                     <Container centerX marginBottom={useTheme().Margin.bottom-20}>
-                        <Text center>Your Full Name is:</Text>
+                        <Text center>Your Birth Date is:</Text>
                     </Container>
                     
                     <Container width={'90%'}>
                         <Input
-                            borderColor={name_border}
-                            type="name"
-                            value={name}
-                            onChangeText={setName}
-                            placeholder="Ex: Your Full Name"
+                            borderColor={date_border}
+                            type="number"
+                            value={date}
+                            mask={"DATE_DDMMYYYY"}
+                            onChangeText={setDate}
+                            placeholder="Ex: 11/11/2011"
                         />
                     </Container>
 
@@ -67,9 +67,15 @@ const FullName = ({route,navigation}) => {
 
                 </Container>
             </View>
+            <Container>
+                <Text center
+                    Bodytext
+                    fontSize={useTheme().FontSize.small}>For Demo purposes, CPF will be the ID required.</Text>
+                    
+            </Container>
             
         </View>
     )
 }
 
-export default FullName
+export default NationalID

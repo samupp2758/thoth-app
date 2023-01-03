@@ -21,7 +21,7 @@ const NationalID = ({route,navigation}) => {
 
 
     useEffect(()=>{
-        if(isaValidCPF(cpf)){
+        if(isaValidCPF(cpf.replace(/\D/g,""))){
             //Save 
             setDisabled(false)
             setCpf_border(defaultBorder)
@@ -32,11 +32,11 @@ const NationalID = ({route,navigation}) => {
     },[cpf])
 
     const next = () => {
-        if(isaValidCPF(cpf)){
+        if(isaValidCPF(cpf.replace(/\D/g,""))){
             //Save 
-            navigation.navigate('CPF')
+            navigation.navigate('BirthDate')
         }else{
-            console.log(Errors[2])
+            console.log(Errors[3])
         }
     }
 
@@ -48,18 +48,16 @@ const NationalID = ({route,navigation}) => {
 
                     <Container centerX marginBottom={useTheme().Margin.bottom-20}>
                         <Text center>Your CPF is:</Text>
-                        <Text center
-                        Bodytext
-                        fontSize={useTheme().FontSize.small}>Your CPF is:</Text>
                     </Container>
                     
                     <Container width={'90%'}>
                         <Input
                             borderColor={cpf_border}
-                            type="name"
+                            type="number"
                             value={cpf}
-                            onChangeText={setCpf_border}
-                            placeholder="Ex: CPF"
+                            mask={"BRL_CPF"}
+                            onChangeText={setCpf}
+                            placeholder="Ex: 999.999.999-99"
                         />
                     </Container>
 
@@ -69,6 +67,12 @@ const NationalID = ({route,navigation}) => {
 
                 </Container>
             </View>
+            <Container>
+                <Text center
+                    Bodytext
+                    fontSize={useTheme().FontSize.small}>For Demo purposes, CPF will be the ID required.</Text>
+                    
+            </Container>
             
         </View>
     )

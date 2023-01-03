@@ -26,9 +26,10 @@ const ExplanationRevenue = ({route,navigation}) => {
     },[part])
 
     const next = () => {
-        if(part+1 == explanation.length){
+        if(part+1 < explanation.length){
             setPart(part+1)
         }else{
+            setPart(0)
             navigation.navigate('FullName')
         }
 

@@ -6,6 +6,8 @@ import Icon from "../Icon";
 import { Text } from "../Text";
 import { Container,InputController, AntDesign_,Entypo_ } from "./style";
 
+import { formatWithMask, Masks } from 'react-native-mask-input';
+
 type Props = {
     placeholder?:string,
     color?:string,
@@ -17,7 +19,8 @@ type Props = {
     value?: string,
     fontSize?:string,
     fontFamily?:string,
-    type?:string
+    type?:string,
+    mask?:string
 }
 
 export const Input: React.FC<Props> = ({
@@ -29,16 +32,18 @@ export const Input: React.FC<Props> = ({
     onPress = () => null,
     onChangeText = (value) => {},
     value = "",
+    mask,
     fontSize = useTheme().FontSize.regular,
     fontFamily = useTheme().FontFamily.primary,
     type = "none"
 
 }) =>{
     const [eyename,seteyename] = useState('eye')
-    const keyboardtype = "default"
+    const keyboardtype = type == 'number' ? 'numeric' : "default"
     const [hideText,sethideText] = useState(type == 'password' ? true : false)
     const capitalize = type == 'name' ? 'words' : 'none'
 
+    
 
     const passwordShow = () => {
         if(eyename == 'eye'){
@@ -48,6 +53,34 @@ export const Input: React.FC<Props> = ({
             seteyename('eye')
             sethideText(true)
         }
+    }
+
+    const change = (value) => {
+        var finalValue = ""
+        if(type == 'number'){
+            finalValue = value.replace(/[^\d.-]/g, '')
+        }else{
+            finalValue = value
+        }
+
+        finalValue = maskit(finalValue)
+        onChangeText(finalValue)
+    }
+
+    const maskit = (value) => {
+        var response = value
+        if(mask){
+
+            const { masked, unmasked, obfuscated } = formatWithMask({
+                text: value,
+                mask: mask == "BRL_CPF" ? Masks.BRL_CPF :
+                                "DATE_DDMMYYYY" ? Masks.DATE_DDMMYYYY : [],
+              });
+            
+            response = masked
+        }
+        return response
+
     }
             return(
                     <Container 
@@ -62,9 +95,10 @@ export const Input: React.FC<Props> = ({
                                     fontSize={fontSize}
                                     fontFamily={fontFamily}
 
+
                                     placeholderTextColor={placeholderColor}
 
-                                    onChangeText={onChangeText}
+                                    onChangeText={(value)=>change(value)}
                                     value={value}
                                     placeholder={placeholder}
                                     keyboardType={keyboardtype}
