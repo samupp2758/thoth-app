@@ -23,6 +23,7 @@ type Props = {
     marginLeft?: number,
     marginRight?: number,
     marginBottom?: number,
+    width:string,
 
     // ButtonedIcon
     name?: string,
@@ -41,6 +42,7 @@ export const Button: React.FC<Props> = ({
     fontFamily = useTheme().FontFamily.primary,
     underlined=false,
     disabled = false,
+    width = "90%",
 
     marginTop = 0,
     marginLeft = 0,
@@ -88,7 +90,7 @@ export const Button: React.FC<Props> = ({
                         </Text> 
                     </View>
                 </PressableInline>:
-                <Pressable onPress={()=>onPress()}>
+                <Pressable width={width} onPress={()=>onPress()}>
                     <Container 
                         google={google}
                         backgroundColor={backgroundColor}>

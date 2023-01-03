@@ -42,7 +42,7 @@ const NationalID = ({route,navigation}) => {
 
     return (
         <View centerX centerY>
-            <Header navigation={navigation} props={{step:3}} />
+            <Header navigation={navigation} props={{step:7}} />
             <View centerX centerY>
                 <Container centerX>
 

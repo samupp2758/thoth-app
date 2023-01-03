@@ -23,7 +23,7 @@ export const Container = styled.View`
     paddingBottom: 13px;
 
     width: 100%;
-
+    zIndex:1;
     borderRadius: 10px;
 
 
@@ -32,7 +32,7 @@ export const Container = styled.View`
 
 
 export const Pressable = styled.TouchableOpacity`
-width:90%;
+${(props)=>'width:'+props.width+';'};
 margin: 5px;
 `
 

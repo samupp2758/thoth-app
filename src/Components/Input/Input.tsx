@@ -4,7 +4,7 @@ import { useTheme } from "../../Hooks";
 import { ButtonedIcon } from "../Button";
 import Icon from "../Icon";
 import { Text } from "../Text";
-import { Container,InputController, AntDesign_,Entypo_ } from "./style";
+import { Container,InputController } from "./style";
 
 import { formatWithMask, Masks } from 'react-native-mask-input';
 

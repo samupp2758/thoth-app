@@ -3,6 +3,7 @@ export const Errors = [
     {message:'Invalid Password!',code:"ErrorX"+1,go:false},
     {message:'Invalid Name!',code:"ErrorX"+2,go:false},
     {message:'Invalid CPF!',code:"ErrorX"+3,go:false},
+    {message:'Invalid Date!',code:"ErrorX"+4,go:false},
 ]
 
 export const Warnings = [

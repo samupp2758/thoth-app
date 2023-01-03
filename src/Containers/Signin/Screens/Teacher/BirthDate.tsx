@@ -21,7 +21,7 @@ const NationalID = ({route,navigation}) => {
 
 
     useEffect(()=>{
-        if(isaValidDate(date.replace(/\D/g,""))){
+        if(isaValidDate(date)){
             //Save 
             setDisabled(false)
             setDate_border(defaultBorder)
@@ -32,17 +32,17 @@ const NationalID = ({route,navigation}) => {
     },[date])
 
     const next = () => {
-        if(isaValidCPF(date.replace(/\D/g,""))){
+        if(isaValidDate(date)){
             //Save 
-            //navigation.navigate('')
+            navigation.navigate('Subject')
         }else{
-            console.log(Errors[3])
+            console.log(Errors[4])
         }
     }
 
     return (
         <View centerX centerY>
-            <Header navigation={navigation} props={{step:3}} />
+            <Header navigation={navigation} props={{step:8}} />
             <View centerX centerY>
                 <Container centerX>
 
@@ -57,7 +57,7 @@ const NationalID = ({route,navigation}) => {
                             value={date}
                             mask={"DATE_DDMMYYYY"}
                             onChangeText={setDate}
-                            placeholder="Ex: 11/11/2011"
+                            placeholder="Ex: DD/MM/YYYY"
                         />
                     </Container>
 

@@ -46,21 +46,6 @@ const icon = (props) => {
     left:10px;`)
 }
 
-export const AntDesign_ = styled(AntDesign)`
-${(props)=>icon(props)}
-`;
-
-export const Ionicons_ = styled(Ionicons)`
-${(props)=>icon(props)}
-`;
-
-export const FontAwesome_ = styled(FontAwesome)`
-    ${(props)=>icon(props)}
-`;
-
-export const Entypo_ = styled(Entypo)`
-${(props)=>icon(props)}
-`;
 
 export const InputController = styled.TextInput`
 color: ${(props) => (props.color)};

@@ -26,6 +26,7 @@ export const ContainerBox  = styled.View`
 
     ${(props) => props.flex ? "flex: 1;" : ""}
 
+    zIndex:1;
     margin:0;
     ${(props)=>props.marginTop ? 'marginTop:'+props.marginTop+'px;' : ''}
     ${(props)=>props.marginLeft ? 'marginLeft:'+props.marginLeft+'px;' : ''}
