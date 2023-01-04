@@ -13,18 +13,22 @@ import { useTheme } from '../../Hooks';
 
 export const Container = styled.View`
     backgroundColor: ${(props) => props.backgroundColor};
+    ${(props) => props.borderColor ? "borderWidth:2px;borderColor: "+ props.borderColor+";" : ""}
     flexDirection: column;
 
     alignItems: center;
     justifyContent: center;
 
+    
     borderRadius: 10px;
+
     paddingTop: 13px;
     paddingBottom: 13px;
+    
+    ${(props)=> props.borderStylee ? "borderStyle:"+props.borderStylee+";" : ""}
 
     width: 100%;
     zIndex:1;
-    borderRadius: 10px;
 
 
 

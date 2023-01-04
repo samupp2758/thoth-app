@@ -41,3 +41,7 @@ ${(props)=>props.centerX ? "alignItems: center;" : ""}
 ${(props)=>props.centerY ? "justifyContent: center;" : ""}
 
 `
+
+export const AvoidingView = styled.KeyboardAvoidingView`
+flex: 1;
+`

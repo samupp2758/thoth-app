@@ -16,6 +16,8 @@ type Props = {
     borderColor?: string,
     onPress?: () => void,
     onChangeText?: (value)=>void,
+    onFocus?:()=>void,
+    onBlur?:()=>void,
     value?: string,
     fontSize?:string,
     fontFamily?:string,
@@ -31,6 +33,8 @@ export const Input: React.FC<Props> = ({
     borderColor = useTheme().Colors.placeHolder,
     onPress = () => null,
     onChangeText = (value) => {},
+    onFocus = () => {},
+    onBlur = () => {},
     value = "",
     mask,
     fontSize = useTheme().FontSize.regular,
@@ -94,11 +98,12 @@ export const Input: React.FC<Props> = ({
                                     selectionColor={color}
                                     fontSize={fontSize}
                                     fontFamily={fontFamily}
-
-
                                     placeholderTextColor={placeholderColor}
 
                                     onChangeText={(value)=>change(value)}
+                                    onFocus={()=>onFocus()}
+                                    onBlur={()=>onBlur()}
+                                    
                                     value={value}
                                     placeholder={placeholder}
                                     keyboardType={keyboardtype}

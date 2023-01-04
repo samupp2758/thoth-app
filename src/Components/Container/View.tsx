@@ -1,7 +1,8 @@
 import React, { ReactPropTypes } from "react";
-import { SafeAreaView } from "react-native";
+import { Keyboard, KeyboardAvoidingView, Platform, SafeAreaView } from "react-native";
+import { TouchableWithoutFeedback } from "react-native";
 import { useTheme } from "../../Hooks";
-import { ViewContainer,ScrollView } from "./style"
+import { ViewContainer,ScrollView, AvoidingView } from "./style"
 
 type Props = {
     children?:React.ReactNode,
@@ -23,7 +24,13 @@ const View: React.FC<Props> = ({
 
 
     return (
-            !scroll?
+        <AvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      contentContainerStyle={{flex:1}}
+    >
+        <TouchableWithoutFeedback
+        onPress={() => Keyboard.dismiss()}>
+            {!scroll?
             <ViewContainer 
             centerX={centerX}
             centerY={centerY}
@@ -32,25 +39,21 @@ const View: React.FC<Props> = ({
                 <SafeAreaView>
                     {children}
                 </SafeAreaView>
-            </ViewContainer>
-            
+            </ViewContainer>   
             :
-
-
-                        <ViewContainer 
-                        centerX={centerX}
-                        centerY={centerY}
-                        backgroundColor={backgroundColor}
-                        >
-                            <SafeAreaView>
-                                <ScrollView>
-                                    {children}
-                                </ScrollView>
-                            </SafeAreaView>
-                        </ViewContainer>
-            
-            
-            
+            <ViewContainer 
+            centerX={centerX}
+            centerY={centerY}
+            backgroundColor={backgroundColor}
+            >
+                <SafeAreaView>
+                    <ScrollView>
+                        {children}
+                    </ScrollView>
+                </SafeAreaView>
+            </ViewContainer>}
+            </TouchableWithoutFeedback>
+            </AvoidingView>
             )
 }
 

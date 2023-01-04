@@ -10,5 +10,6 @@ export const Warnings = [
 ]
 
 export const Info = [
-    {message:'Success!',code:"InfoX"+2,go:true},
+    {message:'Success!',code:"InfoX"+0,go:true},
+    {message:'Sent!',code:"InfoX"+1,go:true},
 ]

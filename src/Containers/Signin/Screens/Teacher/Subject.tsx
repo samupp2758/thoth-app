@@ -13,19 +13,26 @@ import { Subjects } from '../../../../Utils/Subjects'
 const Subject = ({route,navigation}) => {
     const [selected,setSelected] = useState({})
     const [disabled,setDisabled] = useState(true)
+    const [search,setSearch] = useState('')
     const items = Subjects
 
 
     useEffect(()=>{
-        //if(selected != {}){
+        if(selected['name'] == search){
             //Save 
-           // setDisabled(false)
-        //}
-    },[selected])
+            setDisabled(false)
+        }else{
+            setDisabled(true)
+        }
+    },[search])
 
     const next = () => {
-
+        if(selected['name'] == search){
+            //Save 
+            navigation.navigate('Documents')
+        }
     }
+    
 
     return (
         <View centerX centerY>
@@ -42,6 +49,7 @@ const Subject = ({route,navigation}) => {
                             placeholder={'Select the subject you will teach'}
                             items={items}
                             onChange={(value)=>setSelected(value)}
+                            onChangeText={(value)=>setSearch(value)}
                         />
 
                         <Button width="100%" disabled={disabled} onPress={()=>{next()}}>Next</Button>

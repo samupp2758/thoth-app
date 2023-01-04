@@ -1,0 +1,56 @@
+import React, { useEffect, useState } from 'react'
+import { Container,View } from '../../../../Components/Container'
+import { Text } from '../../../../Components/Text'
+import Header from '../../Components/Header'
+
+import { Button } from '../../../../Components/Button'
+
+import {useTheme} from '../../../../Hooks'
+import Icon from '../../../../Components/Icon'
+
+const PendingProfile = ({route,navigation}) => {
+
+    useEffect(()=>{
+
+    },[])
+
+    const next = () => {
+        navigation.navigate('Login')
+    }
+
+    return (
+        <View centerX centerY>
+            <View centerX>
+                <Container centerX>
+
+                    <Container centerX>
+                        <Icon
+                            color={useTheme().Colors.primary}
+                            size={120}
+                            name='checkcircle'
+                        />
+                    </Container>
+                    <Container 
+                    centerX 
+                    marginTop={useTheme().Margin.top}
+                    >
+                        <Text>Your request is on pending.</Text>
+                    </Container>
+                    <Container
+                    marginTop={useTheme().Margin.top-10}>
+                        <Text center
+                            Bodytext
+                            fontSize={useTheme().FontSize.small}>
+                                When everything is ready{'\n'}
+                            you will receive an email.</Text>
+                    </Container>
+                </Container>
+            </View>
+            <Container centerX marginTop={useTheme().Margin.bottom-20}>
+                <Button onPress={()=>{next()}}>Ok</Button>
+            </Container>
+        </View>
+    )
+}
+
+export default PendingProfile

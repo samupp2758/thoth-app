@@ -32,6 +32,13 @@ width: 100%;
 borderRadius: 10px;
 `
 
+export const ItemContainer = styled.View`
+padding:6px;
+backgroundColor: ${(props) => props.backgroundColor};
+borderBottomColor:${(props)=>props.borderColor};
+borderBottomWidth: 0.5px;
+`
+
 export const DropdownButton = styled.View`
 position:absolute;
 
@@ -39,9 +46,13 @@ position:absolute;
     top:15px;
 `
 
-export const ListContainer = styled.View`
+export const ListContainer = styled.ScrollView`
 position:absolute;
 top:56px;
 width:100%;
 height:200px;
+
+borderRadius: 10px;
+backgroundColor: ${(props) => props.backgroundColor};
+
 `

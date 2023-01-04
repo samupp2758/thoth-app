@@ -12,6 +12,7 @@ import Email from './Screens/Email'
 import Password from './Screens/Password'
 import SelectProfile from './Screens/SelectProfile'
 import Name from './Screens/Name'
+import EmailConfirm from './Screens/EmailConfirm'
 
 import studentScreens from './Screens/Student'
 
@@ -23,19 +24,17 @@ const Stack = createStackNavigator()
 
 const Signin = () => {
   return (
-      <NavigationContainer independent>
-        <StatusBar/>
         <Stack.Navigator screenOptions={{ gestureEnabled:false,headerShown: false }}>
             <Stack.Screen name='Email' component={Email}/>
             <Stack.Screen name='Password' component={Password}/>
             <Stack.Screen name='Name' component={Name}/>
             <Stack.Screen name='SelectProfile' component={SelectProfile}/>
+            <Stack.Screen name='EmailConfirm' component={EmailConfirm}/>
 
             {studentScreens(Stack)}
 
             {teacherScreens(Stack)}
         </Stack.Navigator>
-      </NavigationContainer>
   )
 }
 

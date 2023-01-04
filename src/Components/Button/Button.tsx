@@ -23,7 +23,7 @@ type Props = {
     marginLeft?: number,
     marginRight?: number,
     marginBottom?: number,
-    width:string,
+    width?:string,
 
     // ButtonedIcon
     name?: string,
@@ -65,10 +65,15 @@ export const Button: React.FC<Props> = ({
         if(disabled){
             color = useTheme().Colors.primary
             backgroundColor = useTheme().Colors.primaryHighLighted
+
+            
         }
 
         if(inline){
             color = useTheme().Colors.primary
+            if(disabled){
+                color = useTheme().Colors.placeHolder
+            }
         }else{
             underlined = false
         }
