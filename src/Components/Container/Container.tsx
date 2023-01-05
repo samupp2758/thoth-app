@@ -18,7 +18,6 @@ type Props = {
     marginLeft?: number,
     marginRight?: number,
     marginBottom?: number,
-    id?:number
 }
 
 

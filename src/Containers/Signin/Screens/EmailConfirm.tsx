@@ -67,7 +67,8 @@ const EmailConfirm = ({route,navigation}) => {
 
     const next = () => {
         if(!disabled){
-            navigation.navigate('OverviewData')
+
+            navigation.navigate(route.params.who == 'student' ? 'SuccessPage':'OverviewData')
         }
     }
 

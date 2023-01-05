@@ -51,7 +51,7 @@ export const Dropdown: React.FC<Props> = ({
             onChangeText(item.name)
         }
        return(
-        <Container id={item.id}>
+        <Container key={item.id}>
         <ItemContainer
             borderColor={borderColor}
             backgroundColor={backgroundColor}>
