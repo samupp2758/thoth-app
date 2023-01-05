@@ -2,7 +2,7 @@
 This Repo is designated for the React Native (client) project of the Thoth project.
 
 ## UI
-![Ui Overview](https://github.com/samupp2758/thoth-app/blob/main/overview.jpg)
+![Ui Overview](https://github.com/samupp2758/thoth-app/blob/main/overview.png)
 
 
 ## OBT
