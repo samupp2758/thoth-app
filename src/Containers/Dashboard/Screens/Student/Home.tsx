@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import {  } from 'react-native'
 import { Container, View } from "../../../../Components/Container"
 import {ScrollView} from "../../../../Components/Container/style"
 import { Input } from '../../../../Components/Input'
 import { Text } from '../../../../Components/Text'
+import TopicCard from '../../../../Components/TopicCard'
 import TotCard from '../../../../Components/TotCard'
 import { useTheme } from '../../../../Hooks'
+import { Subjects } from '../../../../Utils/Subjects'
 import Header from './Header'
 
 export const Home = ({navigation,props}) => {
@@ -64,6 +65,26 @@ export const Home = ({navigation,props}) => {
                                     />)
                         })}
                 </Container>
+
+                {
+            //Subjects
+            }
+            <Container marginTop={useTheme().Margin.top-10}>
+                <Container marginLeft={useTheme().Margin.left}>
+                    <Text fontSize={useTheme().FontSize.regular}>Subjects</Text>
+                </Container>
+            
+                <Container scroll row marginTop={useTheme().Margin.top-10}>
+                    
+                        {Subjects.map((topic,index)=>{
+                            return(<TopicCard
+                                        title={topic.name}
+                                        backgroundColor={topic.color}
+                                        key={topic.id}
+                                    />)
+                        })}
+                </Container>
+            </Container>
             </Container>
         </View>
     )
