@@ -10,8 +10,8 @@ export const Container = styled.View`
 `
 
 export const Box = styled.View`
-    marginTop:10px;
-    marginLeft:10px;
+    marginTop:20px;
+    marginLeft:20px;
 `
 
 export const ContentContainer = styled.View`

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { SafeAreaView } from "react-native";
 import { useTheme } from "../../Hooks";
-import { ContainerBox } from "./style"
+import { ContainerBox, ScrollView } from "./style"
 
 type Props = {
     children?: React.ReactNode,
@@ -18,6 +18,7 @@ type Props = {
     marginLeft?: number,
     marginRight?: number,
     marginBottom?: number,
+    scroll?:boolean
 }
 
 
@@ -32,6 +33,7 @@ const Container: React.FC<Props> = ({
     flex= false,
     backgroundColor= useTheme().Colors.textLight,
     width,
+    scroll,
 
     marginTop= 0,
     marginLeft= 0,
@@ -54,7 +56,10 @@ const Container: React.FC<Props> = ({
             marginLeft={marginLeft}
             marginRight={marginRight}
             marginBottom={marginBottom}>
-                {children}
+                {scroll ? <ScrollView 
+                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={{paddingRight:20}} horizontal={true}>{children}</ScrollView> : children}
             </ContainerBox>)
 }
 

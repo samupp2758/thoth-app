@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import {  } from 'react-native'
 import { Container, View } from "../../../../Components/Container"
+import {ScrollView} from "../../../../Components/Container/style"
 import { Input } from '../../../../Components/Input'
 import { Text } from '../../../../Components/Text'
 import TotCard from '../../../../Components/TotCard'
@@ -27,7 +29,7 @@ export const Home = ({navigation,props}) => {
         }])
     },[])
     return (
-        <View>
+        <View scroll>
             <Header navigation={navigation} props={{title:'Explore'}}/> 
             {
             //Search bar
@@ -50,16 +52,17 @@ export const Home = ({navigation,props}) => {
                     <Text fontSize={useTheme().FontSize.regular}>Recomended for you</Text>
                 </Container>
             
-                <Container row marginTop={useTheme().Margin.top-10}>
-                    {recomendedTots.map((tot,index)=>{
-                        return(<TotCard
-                                    title={tot.title}
-                                    topic={tot.topic}
-                                    background={tot.bg}
-                                    saved={tot.saved}
-                                    key={tot.key}
-                                />)
-                    })}
+                <Container scroll row marginTop={useTheme().Margin.top-10}>
+                    
+                        {recomendedTots.map((tot,index)=>{
+                            return(<TotCard
+                                        title={tot.title}
+                                        topic={tot.topic}
+                                        background={tot.bg}
+                                        saved={tot.saved}
+                                        key={tot.key}
+                                    />)
+                        })}
                 </Container>
             </Container>
         </View>

@@ -34,11 +34,16 @@ export const ContainerBox  = styled.View`
     ${(props)=>props.marginBottom ? 'marginBottom:'+props.marginBottom+'px;' : ''}
 `
 
+
 export const ScrollView = styled.ScrollView`
-flex: 1;
-flexDirection: column;
+
+${(props)=>props.horizontal ? `
+    paddingRight:20px;
+    flexDirection: row;` : `flexDirection: column;`}
 ${(props)=>props.centerX ? "alignItems: center;" : ""}
 ${(props)=>props.centerY ? "justifyContent: center;" : ""}
+
+
 
 `
 

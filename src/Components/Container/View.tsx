@@ -28,8 +28,6 @@ const View: React.FC<Props> = ({
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       contentContainerStyle={{flex:1}}
     >
-        <TouchableWithoutFeedback
-        onPress={() => Keyboard.dismiss()}>
             {!scroll?
             <ViewContainer 
             centerX={centerX}
@@ -41,18 +39,19 @@ const View: React.FC<Props> = ({
                 </SafeAreaView>
             </ViewContainer>   
             :
-            <ViewContainer 
-            centerX={centerX}
-            centerY={centerY}
-            backgroundColor={backgroundColor}
-            >
-                <SafeAreaView>
-                    <ScrollView>
-                        {children}
-                    </ScrollView>
-                </SafeAreaView>
-            </ViewContainer>}
-            </TouchableWithoutFeedback>
+                <ViewContainer 
+                centerX={centerX}
+                centerY={centerY}
+                backgroundColor={backgroundColor}
+                >
+                    <SafeAreaView>
+                        <ScrollView
+                        showsVerticalScrollIndicator={false}
+                        showsHorizontalScrollIndicator={false}>
+                            {children}
+                        </ScrollView>
+                    </SafeAreaView>
+                </ViewContainer>}
             </AvoidingView>
             )
 }

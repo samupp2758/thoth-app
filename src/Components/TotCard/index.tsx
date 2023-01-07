@@ -29,7 +29,7 @@ export default ({
 
     return(<Container>
                 <Box>
-                    {<ButtonedIcon onPress={()=>save()} name={bookmark} family='FontAwesome'/>}
+                    {<ButtonedIcon onPress={()=>save()} color={useTheme().Colors.textLight} name={bookmark} family='FontAwesome'/>}
                 </Box>
                 <ContentContainer>
                     <Text bold 
