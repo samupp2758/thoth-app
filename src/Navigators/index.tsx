@@ -12,7 +12,8 @@ import {
   Login,
   
   //Storyboards
-  Signin} from "../Containers";
+  Signin,
+  Dashboard} from "../Containers";
 
 
 const Stack = createStackNavigator()
@@ -41,6 +42,7 @@ const MainNavigator = () => {
           <Stack.Screen name="TermsOfUse" component={TermsOfUse} />
 
           <Stack.Screen name="Signin" component={Signin}/>
+          <Stack.Screen name="Dashboard" component={Dashboard}/>
         </Stack.Navigator>
       </NavigationContainer>
   )

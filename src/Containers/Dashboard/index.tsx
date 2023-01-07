@@ -15,7 +15,7 @@ import teacherScreens from './Screens/Teacher'
 const Stack = createStackNavigator()
 
 
-const Signin = () => {
+const Dashboard = () => {
   return (
         <Stack.Navigator screenOptions={{ gestureEnabled:false,headerShown: false }}>
 
@@ -27,4 +27,4 @@ const Signin = () => {
 }
 
 
-export default Signin
+export default Dashboard

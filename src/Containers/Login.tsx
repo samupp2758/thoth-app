@@ -21,7 +21,15 @@ const Login = ({navigation}) => {
 
     const finishLogin = () => {
         login(username,password,(response)=>{
-            console.log(response)
+            if(response.go){
+                //Go to dashboard
+                navigation.navigate('Dashboard',
+                    {params:(response.who == 'student' ?
+                    'Student' : 'Teacher')+'.Home'})
+            }else{
+                //Alert with message response
+                console.log(response)
+            }
         })
     }
 

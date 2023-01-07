@@ -21,7 +21,7 @@ export const login = (username,password,CALLBACK) => {
     }
 
     if(response.go){
-        axios({
+        /*axios({
             method: 'get',
             url: 'login',
             params: {
@@ -37,7 +37,16 @@ export const login = (username,password,CALLBACK) => {
                 response.code = "ErrorX"+"-1"
                 response.go = false
                 CALLBACK(response)
-            })
+            })*/
+        if(username == 'student@thoth.com' &&
+        password == 'srozna3761papiQ!'){
+            CALLBACK({message:'Login successul!',go:true,who:'student'})
+        } else if(username == 'teacher@thoth.com' &&
+        password == 'srozna3761papiQ!'){
+            CALLBACK({message:'Login successul!',go:true,who:'teacher'})
+        }else{
+            CALLBACK(Errors[5])
+        }
     }else{
         CALLBACK(response)
     }

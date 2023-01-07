@@ -5,3 +5,4 @@ export { default as Login } from './Login'
 
 //Storyboards
 export {default as Signin} from './Signin'
+export {default as Dashboard} from './Dashboard'

@@ -22,7 +22,8 @@ type Props = {
     fontSize?:string,
     fontFamily?:string,
     type?:string,
-    mask?:string
+    mask?:string,
+    searchBar?:boolean
 }
 
 export const Input: React.FC<Props> = ({
@@ -39,7 +40,8 @@ export const Input: React.FC<Props> = ({
     mask,
     fontSize = useTheme().FontSize.regular,
     fontFamily = useTheme().FontFamily.primary,
-    type = "none"
+    type = "none",
+    searchBar = false
 
 }) =>{
     const [eyename,seteyename] = useState('eye')
@@ -89,8 +91,14 @@ export const Input: React.FC<Props> = ({
             return(
                     <Container 
                         backgroundColor={backgroundColor}
-                        borderColor={borderColor}
-                        centerX>
+                        borderColor={searchBar ? backgroundColor : borderColor}
+                        centerX
+                        searchBar={searchBar}>
+                            {searchBar?
+                                <Icon family="FontAwesome"
+                                name="search"
+                                size={useTheme().FontSize.regularHalf}
+                                color={useTheme().Colors.placeHolder}/>:<></>}
                                 <InputController
                                     marginLeft={useTheme().Margin.left-10}
                                     

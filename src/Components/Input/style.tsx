@@ -18,17 +18,16 @@ export const Container = styled.View`
     ${(props)=>props.centerX ? "alignItems: center;" : ""}
     ${(props)=>props.centerY ? "justifyContent: center;" : ""}
 
-    borderRadius: 10px;
-    paddingTop: 13px;
-    paddingBottom: 13px;
+    borderRadius: ${(props)=>props.searchBar ? "100000000px" : "10px"};
+    paddingTop: ${(props)=>props.searchBar ? "10px" :"13px"};
+    paddingBottom: ${(props)=>props.searchBar ? "10px" :"13px"};
+    ${(props)=>props.searchBar ? "paddingLeft:10px;" : ""}
 
     borderColor: ${(props)=>props.borderColor};
 
     borderWidth: 0.5px;
 
     width: 100%;
-
-    borderRadius: 10px;
 
 
 

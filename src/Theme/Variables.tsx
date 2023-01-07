@@ -48,7 +48,8 @@ export const Colors = {
           require('../Assets/Images/Logo/3x.png'),
           require('../Assets/Images/Logo/4x.png')],
     logoLoginScreen:[require('../Assets/Images/LogoLoginScreen.png')],
-    siginIsometric: [require('../Assets/Images/signin-isometric.png')]
+    siginIsometric: [require('../Assets/Images/signin-isometric.png')],
+    logoDashboard:[require('../Assets/Images/logoDashboard.png')]
   }
 
   export default {
