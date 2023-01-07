@@ -14,6 +14,7 @@ import {
   //Storyboards
   Signin,
   Dashboard} from "../Containers";
+import { navigationRef } from './RootNavigation'
 
 
 const Stack = createStackNavigator()
@@ -33,7 +34,7 @@ const MainNavigator = () => {
   }
   
   return (
-      <NavigationContainer>
+      <NavigationContainer ref={navigationRef}>
         <StatusBar/>
         <Stack.Navigator screenOptions={{ gestureEnabled:false,headerShown: false }}>
           <Stack.Screen name="SplashScreen" component={SplashScreen} />
