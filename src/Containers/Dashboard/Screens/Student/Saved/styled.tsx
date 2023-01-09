@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { Container, View } from "../../../../Components/Container"
-import {ScrollView} from "../../../../Components/Container/style"
-import { Input } from '../../../../Components/Input'
-import { Text } from '../../../../Components/Text'
-import TopicCard from '../../../../Components/TopicCard'
-import TotCard from '../../../../Components/TotCard'
-import { useTheme } from '../../../../Hooks'
-import { Subjects } from '../../../../Utils/Subjects'
-import Header from '../../Components/Header'
+import { Container, View } from "../../../../../Components/Container"
+import {ScrollView} from "../../../../../Components/Container/style"
+import { Input } from '../../../../../Components/Input'
+import { Text } from '../../../../../Components/Text'
+import TopicCard from '../../../../../Components/TopicCard'
+import TotCard from '../../../../../Components/TotCard'
+import { useTheme } from '../../../../../Hooks'
+import { Subjects } from '../../../../../Utils/Subjects'
+import Header from '../../../Components/Header'
 
 export const Home = ({navigation,props}) => {
     const [searchValue,setSearchValue] = useState('')

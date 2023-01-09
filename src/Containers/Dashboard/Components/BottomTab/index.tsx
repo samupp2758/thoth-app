@@ -35,7 +35,8 @@ export default () => {
                         return(
                         <IconContainer>
                             <ButtonedIcon
-                                onPress={()=>{console.log(single.onPress);RootNavigation.navigate(single.onPress,{who:'Student'})}}
+                                onPress={()=>{
+                                    RootNavigation.navigate(single.onPress,{who:'Student'})}}
                                 key={index}
                                 name={single.name}
                                 family={single.family}
