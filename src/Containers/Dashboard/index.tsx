@@ -22,14 +22,14 @@ const Stack = createStackNavigator()
 const Dashboard = () => {
   return (
       <View style={{flex:1}}>
-        <Stack.Navigator  screenOptions={{ animationEnabled: false,gestureEnabled:false,headerShown: false }}>
-            {studentScreens(Stack)}
+          <Stack.Navigator screenOptions={{ animationEnabled: false,gestureEnabled:false,headerShown: false }}>
+              {studentScreens(Stack)}
 
-            {teacherScreens(Stack)}
-            
-            <Stack.Screen name={'Notifications'} component={Notifications}/>
-            <Stack.Screen name={'Settings'} component={Settings}/>
-        </Stack.Navigator>
+              {teacherScreens(Stack)}
+              
+              <Stack.Screen name={'Notifications'} component={Notifications}/>
+              <Stack.Screen name={'Settings'} component={Settings}/>
+          </Stack.Navigator>
         <BottomTab/>
       </View>
   )

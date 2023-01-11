@@ -23,7 +23,9 @@ type Props = {
     fontFamily?:string,
     type?:string,
     mask?:string,
-    searchBar?:boolean
+    searchBar?:boolean,
+    disabled?:boolean,
+    noborder?:boolean
 }
 
 export const Input: React.FC<Props> = ({
@@ -41,7 +43,9 @@ export const Input: React.FC<Props> = ({
     fontSize = useTheme().FontSize.regular,
     fontFamily = useTheme().FontFamily.primary,
     type = "none",
-    searchBar = false
+    searchBar = false,
+    disabled = false,
+    noborder
 
 }) =>{
     const [eyename,seteyename] = useState('eye')
@@ -91,7 +95,7 @@ export const Input: React.FC<Props> = ({
             return(
                     <Container 
                         backgroundColor={backgroundColor}
-                        borderColor={searchBar ? backgroundColor : borderColor}
+                        borderColor={noborder ? "#00000000" : searchBar ? backgroundColor : borderColor}
                         centerX
                         searchBar={searchBar}>
                             {searchBar?
@@ -111,7 +115,8 @@ export const Input: React.FC<Props> = ({
                                     onChangeText={(value)=>change(value)}
                                     onFocus={()=>onFocus()}
                                     onBlur={()=>onBlur()}
-                                    
+                                    editable={!disabled}
+
                                     value={value}
                                     placeholder={placeholder}
                                     keyboardType={keyboardtype}

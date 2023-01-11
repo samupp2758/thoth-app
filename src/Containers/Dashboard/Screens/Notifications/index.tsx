@@ -82,6 +82,8 @@ export default ({route,navigation}) => {
                     return(renderItem(single,index))
                 })}
             </Container>
+
+
         </View>
     )
 }

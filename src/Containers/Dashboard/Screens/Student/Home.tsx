@@ -128,6 +128,8 @@ export const Home = ({navigation,props}) => {
             {subjects()}
 
             {trends()}
+
+            <Container marginBottom={80}></Container>
         </View>
     )
 }

@@ -107,6 +107,8 @@ export default function ({navigation,props}) {
             {saved()}
 
             {history()}
+
+            <Container marginBottom={80}></Container>
         </View>
     )
 }
