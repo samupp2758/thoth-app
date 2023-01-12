@@ -21,7 +21,7 @@ export default ({
     saved = false,
     topic = true
 }) => {
-    const [bookmark,setbookmark] = useState(saved? 'bookmark-o': 'bookmark')
+    const [bookmark,setbookmark] = useState(saved? 'bookmark': 'bookmark-o')
 
     const save = () => {
         setbookmark(bookmark =='bookmark' ? 'bookmark-o': 'bookmark')

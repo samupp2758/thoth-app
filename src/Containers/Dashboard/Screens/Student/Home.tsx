@@ -14,36 +14,40 @@ export const Home = ({navigation,props}) => {
     const [recomendedTots,setrecomendedTots] = useState([])
     const [trendingTots,settrendingTots] = useState([])
 
-    useEffect(()=>{
-        setrecomendedTots([{
-            title:'Sum of Arcs',
-            topic:"Mathematics",
-            background:'https://adasdasd.com/image.png',
-            saved:true,
-            key:'2jiocj02dm2n34672'
-        },
-        {
-            title:'Sum of Arcs',
-            topic:"Mathematics",
-            background:'https://adasdasd.com/image.png',
-            saved:true,
-            key:'2jioc02dm2n34672'
-        }])
+    const [loading,setloading] = useState(false)
 
-        settrendingTots([{
-            title:'Sum of Arcs',
-            topic:"Mathematics",
-            background:'https://adasdasd.com/image.png',
-            saved:true,
-            key:'2jiocj02dm2n34672'
-        },
-        {
-            title:'Sum of Arcs',
-            topic:"Mathematics",
-            background:'https://adasdasd.com/image.png',
-            saved:true,
-            key:'2jioc02dm2n34672'
-        }])
+    const mockedData = [{
+        title:'Sum of Arcs',
+        topic:"Mathematics",
+        background:'https://adasdasd.com/image.png',
+        saved:true,
+        key:'2jiocj02dm2n34672'
+    },
+    {
+        title:'Sum of Arcs',
+        topic:"Mathematics",
+        background:'https://adasdasd.com/image.png',
+        saved:false,
+        key:'2jioc02dm2n34672'
+    }]
+
+    const loadData = () => {
+        setloading(true)
+        setrecomendedTots(mockedData)
+        settrendingTots(mockedData)
+
+        
+        setTimeout(()=>{
+        setloading(false)
+        },2000)
+    }
+
+    const onRefresh = () => {        
+            loadData()
+    }
+
+    useEffect(()=>{
+        loadData()
     },[])
 
     const trends = () => (
@@ -100,6 +104,8 @@ export const Home = ({navigation,props}) => {
                                     title={topic.name}
                                     backgroundColor={topic.color}
                                     key={topic.id}
+                                    onPress={()=>
+                                        navigation.navigate('Student.Explore.Subject',{topic:topic})}
                                 />)
                     })}
             </Container>
@@ -107,8 +113,8 @@ export const Home = ({navigation,props}) => {
     )
 
     return (
-        <View scroll>
-            <Header navigation={navigation} props={{title:'Explore'}}/> 
+        <View scroll refreshing={loading} onRefresh={()=>{onRefresh()}}>
+            <Header navigation={navigation} props={{title:'Explore',who:'Student'}}/> 
             {
             //Search bar
             }

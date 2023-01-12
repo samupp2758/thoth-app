@@ -1,4 +1,5 @@
 import React from 'react'
+import { TouchableOpacity } from 'react-native'
 import { ButtonedIcon } from '../../../../Components/Button'
 import { Container } from '../../../../Components/Container'
 import { Image } from '../../../../Components/Image'
@@ -20,7 +21,9 @@ const  Header = ({navigation,props}) => {
             
             <Text bold large>{props.title}</Text>
             <IconBox>
-                <Image source='logoDashboard' size={1}/>
+                <TouchableOpacity onPress={()=>navigation.navigate(props.who+'.User')}>
+                    <Image source='logoDashboard' size={1}/>
+                </TouchableOpacity>
             </IconBox>
         </Container>
     )

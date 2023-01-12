@@ -8,44 +8,56 @@ import { ItemBox } from './style'
 
 export default ({route,navigation}) => {
     const [notifications,setnotifications] = useState([])
-    const [loading,setloading] = useState(true)
 
-    useEffect(()=>{
+    const [loading,setloading] = useState(false)
+
+    const mockedData = [
+        {title:'Good News!',
+        body:'Cool Body!',
+        time:new Date()},
+
+
+        {title:'Good News!',
+        body:'Cool Body!',
+        time:new Date()},
+
+
+        {title:'Good News!',
+        body:'Cool Body!',
+        time:new Date()},
+
+
+        {title:'Good News!',
+        body:'Cool Body!',
+        time:new Date()},
+
+
+        {title:'Good News!',
+        body:'Cool Body!',
+        time:new Date()},
+
+
+        {title:'Good News!',
+        body:'Cool Body!',
+        time:new Date()}
+    ]
+
+    const loadData = () => {
+       setloading(true) 
+
+       setnotifications(mockedData)
+
         setTimeout(()=>{
             setloading(false)
-        },1000)
+        },2000)
+    }
 
-       setnotifications([
-            {title:'Good News!',
-            body:'Cool Body!',
-            time:new Date()},
-    
-    
-            {title:'Good News!',
-            body:'Cool Body!',
-            time:new Date()},
-    
-    
-            {title:'Good News!',
-            body:'Cool Body!',
-            time:new Date()},
-    
-    
-            {title:'Good News!',
-            body:'Cool Body!',
-            time:new Date()},
-    
-    
-            {title:'Good News!',
-            body:'Cool Body!',
-            time:new Date()},
-    
-    
-            {title:'Good News!',
-            body:'Cool Body!',
-            time:new Date()}
-        ])
+    const onRefresh = () => {
+        loadData()
+    }    
 
+    useEffect(()=>{
+        loadData()
     },[])
 
     const renderItem = (single,index) => {
@@ -68,10 +80,10 @@ export default ({route,navigation}) => {
     }
 
     return(
-        <View centerX centerY scroll>
+        <View centerX centerY scroll refreshing={loading} onRefresh={()=>{onRefresh()}}>
             <Header
             navigation={navigation}
-            props={{title:'Notifications',backbutton:true}}/>
+            props={{title:'Notifications',backbutton:true,who:route.params.who}}/>
 
             <Container centerX centerY 
             marginTop={useTheme().Margin.top-20}

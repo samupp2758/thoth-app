@@ -1,5 +1,5 @@
 import React, { ReactPropTypes } from "react";
-import { Keyboard, KeyboardAvoidingView, Platform, SafeAreaView } from "react-native";
+import { Keyboard, KeyboardAvoidingView, Platform, RefreshControl, SafeAreaView } from "react-native";
 import { TouchableWithoutFeedback } from "react-native";
 import { useTheme } from "../../Hooks";
 import { ViewContainer,ScrollView, AvoidingView } from "./style"
@@ -9,7 +9,9 @@ type Props = {
     centerX?: boolean,
     centerY?: boolean,
     backgroundColor?:string,
-    scroll?:boolean
+    scroll?:boolean,
+    refreshing?:boolean,
+    onRefresh?: () => void
 }
 
 
@@ -18,7 +20,9 @@ const View: React.FC<Props> = ({
     centerX = false,
     centerY = false,
     backgroundColor = useTheme().Colors.textLight,
-    scroll = false
+    scroll = false,
+    refreshing = false,
+    onRefresh = () => {}
     
 }) => {
 
@@ -46,6 +50,8 @@ const View: React.FC<Props> = ({
                 >
                     <SafeAreaView>
                         <ScrollView
+                        refreshControl={onRefresh == (()=>{}) ? <></> :
+                            <RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>}
                         showsVerticalScrollIndicator={false}
                         showsHorizontalScrollIndicator={false}>
                             {children}

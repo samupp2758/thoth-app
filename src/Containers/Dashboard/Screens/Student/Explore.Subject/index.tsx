@@ -9,12 +9,10 @@ import { useTheme } from '../../../../../Hooks'
 import { Subjects } from '../../../../../Utils/Subjects'
 import Header from '../../../Components/Header'
 
-export default function ({navigation,props}) {
+export default function ({route,navigation}) {
     const [searchValue,setSearchValue] = useState('')
-    const [historyTots,sethistoryTots] = useState([])
-    const [savedTots,setsavedTots] = useState([])
-
-    const [loading,setloading] = useState(false)
+    const [subTopics,setsubTopics] = useState([])
+    const [titleName,settitleName] = useState('') 
 
     const mockedData = [{
         title:'Sum of Arcs',
@@ -31,38 +29,33 @@ export default function ({navigation,props}) {
         key:'2jioc02dm2n34672'
     }]
 
-    const onRefresh = () => {
-        loadData()
-    }
-
-    const loadData = () => {
-        setloading(true)
-
-        sethistoryTots(mockedData)
-        setsavedTots(mockedData)
-
-        setTimeout(()=>{
-            setloading(false)
-        },2000)
-    }
-
     useEffect(()=>{
-        loadData()
+        setsubTopics(Subjects[route.params.topic.id].subtopics)
+        settitleName(route.params.topic.name)
+        populateSubtopics()
     },[])
 
-    const history = () => (
+    const populateSubtopics = () => {
+        var d = subTopics.map((single,index)=>{
+            single['tots'] = mockedData
+            return single
+        })
+        setsubTopics(d)
+    }
+
+    const subTopic = (title,tots) => (
             <Container marginTop={useTheme().Margin.top-10}>
                 <Container marginLeft={useTheme().Margin.left}>
-                    <Text fontSize={useTheme().FontSize.regular}>History</Text>
+                    <Text fontSize={useTheme().FontSize.regular}>{title}</Text>
                 </Container>
             
                 <Container scroll row marginTop={useTheme().Margin.top-20}>
                     
-                        {historyTots.map((tot,index)=>{
+                        {tots.map((tot,index)=>{
                             return(<TotCard
                                 title={tot.title}
                                 topic={tot.topic}
-                                background={tot.bg}
+                                background={tot.background}
                                 saved={tot.saved}
                                 key={tot.key}
                             />)
@@ -71,29 +64,9 @@ export default function ({navigation,props}) {
             </Container>)
 
 
-    const saved = () => (
-                <Container marginTop={useTheme().Margin.top-10}>
-                    <Container marginLeft={useTheme().Margin.left}>
-                        <Text fontSize={useTheme().FontSize.regular}>Saved Tots</Text>
-                    </Container>
-                
-                    <Container scroll row marginTop={useTheme().Margin.top-20}>
-                        
-                            {savedTots.map((tot,index)=>{
-                                return(<TotCard
-                                            title={tot.title}
-                                            topic={tot.topic}
-                                            background={tot.bg}
-                                            saved={tot.saved}
-                                            key={tot.key}
-                                        />)
-                            })}
-                    </Container>
-                </Container>)
-
     return (
-        <View scroll refreshing={loading} onRefresh={()=>{onRefresh()}}>
-            <Header navigation={navigation} props={{who:'Student',backbutton:true,title:'Saved'}}/> 
+        <View scroll>
+            <Header navigation={navigation} props={{backbutton:true,title:titleName,who:'Student'}}/> 
             {
             //Search bar
             }
@@ -103,14 +76,14 @@ export default function ({navigation,props}) {
                     value={searchValue}
                     onChangeText={setSearchValue}
                     searchBar
-                    placeholder='Saved.....'
+                    placeholder='Search......'
                     />
                 </Container>
             </Container>
 
-            {saved()}
-
-            {history()}
+            {subTopics.map((single)=>{
+                return(subTopic(single.title,single.tots))
+            })}
 
             <Container marginBottom={80}></Container>
         </View>
