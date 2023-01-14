@@ -14,6 +14,7 @@ import BottomTab from './Components/BottomTab'
 
 import Notifications from './Screens/Notifications'
 import Settings from './Screens/Settings'
+import Search from './Screens/Search'
 
 
 const Stack = createStackNavigator()
@@ -29,6 +30,7 @@ const Dashboard = () => {
               
               <Stack.Screen name={'Notifications'} component={Notifications}/>
               <Stack.Screen name={'Settings'} component={Settings}/>
+              <Stack.Screen name={'Search'} component={Search}/>
           </Stack.Navigator>
         <BottomTab/>
       </View>

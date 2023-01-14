@@ -64,7 +64,7 @@ color:'#0f0f0f',
 icon:{name:'',
 family:''},
 selected:false,
-name:'Physical Education',
+name:'P. Education',
 subtopics:[
     {id:16,title:'Topic!',background:""},
     {id:17,title:'Topic!',background:""},

@@ -37,7 +37,6 @@ export const Container = styled.View`
 
 export const Pressable = styled.TouchableOpacity`
 ${(props)=>'width:'+props.width+';'};
-margin: 5px;
 `
 
 

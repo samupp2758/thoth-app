@@ -20,11 +20,12 @@ const  Header = ({navigation,props}) => {
             </BackBox>:<></>}
             
             <Text bold large>{props.title}</Text>
+            {!props.noUserButton?
             <IconBox>
                 <TouchableOpacity onPress={()=>navigation.navigate(props.who+'.User')}>
                     <Image source='logoDashboard' size={1}/>
                 </TouchableOpacity>
-            </IconBox>
+            </IconBox>:<></>}
         </Container>
     )
 }

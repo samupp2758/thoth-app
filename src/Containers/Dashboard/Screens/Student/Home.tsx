@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Container, View } from "../../../../Components/Container"
 import {ScrollView} from "../../../../Components/Container/style"
 import { Input } from '../../../../Components/Input'
@@ -13,6 +13,7 @@ export const Home = ({navigation,props}) => {
     const [searchValue,setSearchValue] = useState('')
     const [recomendedTots,setrecomendedTots] = useState([])
     const [trendingTots,settrendingTots] = useState([])
+    const SearchRef = useRef()
 
     const [loading,setloading] = useState(false)
 
@@ -112,6 +113,11 @@ export const Home = ({navigation,props}) => {
         </Container>
     )
 
+    const onFocusSearch = () => {
+        //SearchRef.current.blur()
+        navigation.navigate('Search')
+    }
+
     return (
         <View scroll refreshing={loading} onRefresh={()=>{onRefresh()}}>
             <Header navigation={navigation} props={{title:'Explore',who:'Student'}}/> 
@@ -125,6 +131,8 @@ export const Home = ({navigation,props}) => {
                     onChangeText={setSearchValue}
                     searchBar
                     placeholder='Search......'
+                    onFocus={()=>{onFocusSearch()}}
+                    ref={SearchRef}
                     />
                 </Container>
             </Container>
