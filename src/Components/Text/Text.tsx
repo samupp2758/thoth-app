@@ -7,7 +7,7 @@ import {
 
 const theme = useTheme()
 
-type Props = {
+export type TextProps = {
     children?: string | React.ReactNode,
     width?: string,
     fontSize?: number,
