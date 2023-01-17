@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { Keyboard } from 'react-native'
 import { Container, View } from "../../../../Components/Container"
 import {ScrollView} from "../../../../Components/Container/style"
 import { Input } from '../../../../Components/Input'
@@ -114,7 +115,7 @@ export const Home = ({navigation,props}) => {
     )
 
     const onFocusSearch = () => {
-        //SearchRef.current.blur()
+        Keyboard.dismiss()
         navigation.navigate('Search')
     }
 
