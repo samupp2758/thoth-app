@@ -9,12 +9,14 @@ import TotCard from '../../../../Components/TotCard'
 import { useTheme } from '../../../../Hooks'
 import { Subjects } from '../../../../Utils/Subjects'
 import Header from '../../Components/Header'
+import Search from '../Search'
 
-export const Home = ({navigation,props}) => {
+export const Home = ({navigation,route}) => {
     const [searchValue,setSearchValue] = useState('')
     const [recomendedTots,setrecomendedTots] = useState([])
     const [trendingTots,settrendingTots] = useState([])
     const SearchRef = useRef()
+    const [searching, setsearching] = useState(false)
 
     const [loading,setloading] = useState(false)
 

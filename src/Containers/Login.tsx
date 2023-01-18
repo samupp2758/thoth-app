@@ -48,7 +48,7 @@ const Login = ({navigation}) => {
         </Container>
 
         <Container marginTop={useTheme().Margin.top-15} rightX>
-            <Image height={'350px'} maxWidth="60%" source="logoLoginScreen"/>
+            <Image height={'350px'} maxWidth="55%" source="logoLoginScreen"/>
         </Container>
 
         <Container marginTop={useTheme().Margin.top-15}>

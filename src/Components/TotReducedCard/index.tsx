@@ -4,7 +4,6 @@ import { ButtonedIcon } from '../Button'
 import Icon from '../Icon'
 import { Text } from '../Text'
 import { Container,
-    Box,
     ContentContainer } from "./style"
 
 type Props = {
@@ -25,7 +24,7 @@ export default ({
     return(<Container>
                 <ContentContainer>
                     <Text bold 
-                    fontSize={useTheme().FontSize.regularHalf}
+                    large
                     color={useTheme().Colors.textLight}>{title}</Text>
                     <Text
                     fontSize={useTheme().FontSize.regular}

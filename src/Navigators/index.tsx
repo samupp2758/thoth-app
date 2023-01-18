@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaView, StatusBar, View, Text } from 'react-native'
+import { SafeAreaView, StatusBar, View, Text, TouchableWithoutFeedback, Keyboard } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
 import { useTheme } from '../Hooks'

@@ -28,6 +28,8 @@ const View: React.FC<Props> = ({
 
 
     return (
+        <TouchableWithoutFeedback style={{flex:1}} onPress={()=>Keyboard.dismiss()}>
+
         <AvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       contentContainerStyle={{flex:1}}
@@ -59,6 +61,7 @@ const View: React.FC<Props> = ({
                     </SafeAreaView>
                 </ViewContainer>}
             </AvoidingView>
+            </TouchableWithoutFeedback>
             )
 }
 
